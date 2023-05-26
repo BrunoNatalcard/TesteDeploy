@@ -23,7 +23,6 @@ jobs:
 
       # Copy files to AWS with SSH
       - name: Copy files with SSH
-        run: easingthemes/ssh-deploy@main
         env:
           SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
           ARGS: "-rlgoDzvc -i --delete"
@@ -32,3 +31,4 @@ jobs:
           REMOTE_USER: ${{ secrets.REMOTE_USER }}
           TARGET: ${{ secrets.REMOTE_TARGET }}
           EXCLUDE: "/dist/, /node_modules/"
+        run: easingthemes/ssh-deploy@main
